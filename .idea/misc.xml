@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/carlo/AndroidStudioProjects/proyectofinal/app/src/main/res/drawable/cuadrado.xml" value="0.182" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/proyectofinal/app/src/main/res/layout/activity_historial.xml" value="0.22" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/proyectofinal/app/src/main/res/layout/activity_listcate.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/proyectofinal/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/proyectofinal/app/src/main/res/layout/activity_main_categorias1.xml" value="0.22" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/proyectofinal/app/src/main/res/layout/activity_productos.xml" value="0.25" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/proyectofinal/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/proyectofinal/app/src/main/res/layout/itempedido.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/proyectofinal/app/src/main/res/layout/list_categorias.xml" value="0.33" />
       </map>
     </option>
