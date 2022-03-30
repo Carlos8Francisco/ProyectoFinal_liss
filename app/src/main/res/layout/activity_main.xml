@@ -46,7 +46,8 @@
             android:paddingTop="15dp"
             android:paddingRight="10dp"
             android:paddingBottom="20dp"
-            android:textColorHint="#fff" />
+            android:textColorHint="#fff"
+            android:inputType="textEmailAddress"/>
 
         <EditText
             android:id="@+id/etcontraseña"
@@ -56,12 +57,13 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/input"
-            android:hint="Contraseña"
+            android:hint="Escribe tu Contraseña"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="20dp"
-            android:textColorHint="#fff" />
+            android:textColorHint="#fff"
+            android:inputType="textPassword"/>
 
         <Button
             android:id="@+id/btnlogin"

@@ -24,7 +24,7 @@ public class productos extends AppCompatActivity {
 
     TextView tv1,tv2,tv3,tv4,tv5,tv6,totalv7;
     EditText nombre, direccion, c1, c2, c3;
-    Button pedido, cancelar, ver;
+    Button pedido, cancelar;
     int position;
 
     @Override
@@ -46,18 +46,18 @@ public class productos extends AppCompatActivity {
         c3 = findViewById(R.id.ed_can3_ins);
         pedido = findViewById(R.id.pedido1);
         cancelar = findViewById(R.id.cclr);
-        ver = findViewById(R.id.regrss);
+
 
 
         Intent intent=getIntent();
         position =intent.getExtras().getInt("position");
 
-        tv1.setText("nombre: " + listcate.categoriasArrayList.get(position).getNombre());
-        tv2.setText("cantidad: " + listcate.categoriasArrayList.get(position).getCantidad());
-        tv3.setText("nombre: " + listcate.categoriasArrayList.get(position).getNombre2());
-        tv4.setText("cantidad: " + listcate.categoriasArrayList.get(position).getCantidad2());
-        tv5.setText("nombre: " + listcate.categoriasArrayList.get(position).getNombre3());
-        tv6.setText("cantidad: " + listcate.categoriasArrayList.get(position).getCantidad3());
+        tv1.setText("Producto: " + listcate.categoriasArrayList.get(position).getNombre());
+        tv2.setText(listcate.categoriasArrayList.get(position).getCantidad());
+        tv3.setText("Producto: " + listcate.categoriasArrayList.get(position).getNombre2());
+        tv4.setText(listcate.categoriasArrayList.get(position).getCantidad2());
+        tv5.setText("Producto: " + listcate.categoriasArrayList.get(position).getNombre3());
+        tv6.setText(listcate.categoriasArrayList.get(position).getCantidad3());
 
 
 
@@ -66,24 +66,26 @@ public class productos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //tv2.getText().toString(),tv4.getText().toString(),tv6.getText().toString()
 
-                String Total = TotalPedido(c1.getText().toString(),c2.getText().toString(),c3.getText().toString());
+                String Total = TotalPedido(c1.getText().toString(),c2.getText().toString(),c3.getText().toString(),tv2.getText().toString(),tv4.getText().toString(),tv6.getText().toString());
+                //String Total = TotalPedido(c1.getText().toString(),c2.getText().toString(),c3.getText().toString());
                 InsertarPedido(nombre.getText().toString(), direccion.getText().toString(), Total);
+                startActivity(new Intent(productos.this, MainCategorias1.class)); //stars ultimo modify
 
             }
         });
 
-        ver.setOnClickListener(new View.OnClickListener() {
+        cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
-                startActivity(new Intent(productos.this, historial.class));
-
+                startActivity(new Intent(productos.this, MainCategorias1.class)); //stars ultimo modify
 
             }
         });
+
+
     }
 
 
@@ -118,16 +120,20 @@ public class productos extends AppCompatActivity {
     }
 
 
-
-    private String TotalPedido(String c1, String c2, String c3) {
+    private String TotalPedido(String c1, String c2, String c3, String tv2, String tv4, String tv6)
+    /*private String TotalPedido(String c1, String c2, String c3)*/ {
 
 
 
         Double Cantidad1 = Double.valueOf(c1);
         Double Cantidad2 = Double.valueOf(c2);
         Double Cantidad3 = Double.valueOf(c3);
+        Double Precio1 = Double.valueOf(tv2);
+        Double Precio2 = Double.valueOf(tv4);
+        Double Precio3 = Double.valueOf(tv6);
 
-        Double Total = Cantidad1 + Cantidad2 + Cantidad3;
+        Double Total = (Cantidad1 * Precio1) + (Cantidad2 * Precio2) + (Cantidad3 * Precio3);
+        //Double Total = Cantidad1 + Cantidad2 + Cantidad3;
 
         return ""+Total;
 

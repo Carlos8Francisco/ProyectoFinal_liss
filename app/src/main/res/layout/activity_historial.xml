@@ -8,10 +8,10 @@
     android:background="#323131">
 
     <LinearLayout
+        android:id="@+id/ee1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="650dp"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="190dp"
@@ -32,6 +32,16 @@
             android:textSize="30sp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/cclr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:text="Regresar"
+        android:layout_below="@id/ee1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,7 +69,7 @@
             android:gravity="center"
             android:background="#878383"/>
         <TextView
-            android:text="Direccion"
+            android:text="Telefono"
             android:layout_width="0dp"
             android:layout_weight="4"
             android:textColor="#F1EDED"

@@ -2,7 +2,10 @@ package com.example.proyectofinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ import java.util.ArrayList;
 public class historial extends AppCompatActivity {
 
     private ListView listaProductos;
+    private Button regresar;
     private ArrayList<producto> list_product;
     private productoAdapter adapter;
 
@@ -31,8 +35,20 @@ public class historial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial);
         listaProductos = (ListView) findViewById(R.id.Listproduct);
+        regresar = (Button) findViewById(R.id.cclr);
         list_product  = new ArrayList<>();
         GetListaFromServer();
+
+        regresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                startActivity(new Intent(historial.this, MainCategorias1.class)); //stars ultimo modify
+                Toast.makeText(getApplicationContext(), "Regresaste a Categorias", Toast.LENGTH_LONG).show();
+
+            }
+        });
 
     }
 

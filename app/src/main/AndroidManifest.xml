@@ -14,21 +14,27 @@
         android:theme="@style/Theme.Proyectofinal">
         <activity
             android:name=".historial"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".productos"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".listcate"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".register"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainCategorias1"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
