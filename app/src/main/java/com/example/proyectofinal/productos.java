@@ -23,7 +23,7 @@ import org.json.JSONObject;
 public class productos extends AppCompatActivity {
 
     TextView tv1,tv2,tv3,tv4,tv5,tv6,totalv7;
-    EditText nombre, direccion, c1, c2, c3;
+    EditText nombre, direccion, colon, c1, c2, c3;
     Button pedido, cancelar;
     int position;
 
@@ -39,6 +39,7 @@ public class productos extends AppCompatActivity {
         tv6 = findViewById(R.id.tvpr3);
         totalv7 = findViewById(R.id.total);
         //edit y botones
+        colon = findViewById(R.id.colonia);
         nombre    = findViewById(R.id.nombre);
         direccion = findViewById(R.id.direccion);
         c1 = findViewById(R.id.ed_can1_ins);
@@ -61,6 +62,9 @@ public class productos extends AppCompatActivity {
 
 
 
+
+
+
         //onclicks botones
         pedido.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,20 +75,31 @@ public class productos extends AppCompatActivity {
                 String p3 = c1.getText().toString();
                 String p4 = c2.getText().toString();
                 String p5 = c3.getText().toString();
+                String p6 = colon.getText().toString();
 
-                if(p1.length() == 0 && p2.length() == 0 && p3.length() == 0 && p4.length() == 0 && p5.length() == 0){
+
+
+                if(p1.length() == 0 && p2.length() == 0 && p3.length() == 0 && p4.length() == 0 && p5.length() == 0 && p6.length() == 0){
 
                     Toast.makeText(getApplicationContext(), "Rellena los campos", Toast.LENGTH_LONG).show();
 
-                }else if(p1.length() == 0 && p2.length() == 0 && p4.length() == 0 && p5.length() == 0){
+                }else if(p1.length() == 0 && p2.length() == 0 && p4.length() == 0 && p5.length() == 0 && p6.length() == 0){
 
                     Toast.makeText(getApplicationContext(), "Rellena tus datos", Toast.LENGTH_LONG).show();
 
-                }else if(p1.length() == 0 && p2.length() == 0 && p3.length() == 0 && p5.length() == 0){
+                }else if(p1.length() == 0 && p2.length() == 0 && p3.length() == 0 && p5.length() == 0 && p6.length() == 0){
+
+                    Toast.makeText(getApplicationContext(), "Rellena tus datos", Toast.LENGTH_LONG).show();
+
+                }else if(p1.length() == 0 && p2.length() == 0 && p3.length() == 0 && p4.length() == 0 && p6.length() == 0){
 
                     Toast.makeText(getApplicationContext(), "Rellena tus datos", Toast.LENGTH_LONG).show();
 
                 }else if(p1.length() == 0 && p2.length() == 0 && p3.length() == 0 && p4.length() == 0){
+
+                    Toast.makeText(getApplicationContext(), "Rellena tus datos", Toast.LENGTH_LONG).show();
+
+                }else if(p1.length() == 0 && p2.length() == 0 && p6.length() == 0 ){
 
                     Toast.makeText(getApplicationContext(), "Rellena tus datos", Toast.LENGTH_LONG).show();
 
@@ -160,43 +175,112 @@ public class productos extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "Rellena el campo telefono", Toast.LENGTH_LONG).show();
 
+                }else if(p1.length() == 0 && p4.length() == 0 && p5.length() == 0 && p6.length() == 0){
+
+                    Toast.makeText(getApplicationContext(), "Rellena el campo direccion", Toast.LENGTH_LONG).show();
+
+                }else if(p1.length() == 0 && p3.length() == 0 && p5.length() == 0 && p6.length() == 0){
+
+                    Toast.makeText(getApplicationContext(), "Rellena el campo direccion", Toast.LENGTH_LONG).show();
+
+                }else if(p1.length() == 0 && p3.length() == 0 && p4.length() == 0 && p6.length() == 0){
+
+                    Toast.makeText(getApplicationContext(), "Rellena el campo direccion", Toast.LENGTH_LONG).show();
+
+                }else if(p1.length() == 0 && p5.length() == 0 && p6.length() == 0){
+
+                    Toast.makeText(getApplicationContext(), "Rellena el campo direccion", Toast.LENGTH_LONG).show();
+
+                }else if(p1.length() == 0 && p4.length() == 0 && p6.length() == 0){
+
+                    Toast.makeText(getApplicationContext(), "Rellena el campo direccion", Toast.LENGTH_LONG).show();
+
+                }else if(p1.length() == 0 && p3.length() == 0 && p6.length() == 0){
+
+                    Toast.makeText(getApplicationContext(), "Rellena el campo direccion", Toast.LENGTH_LONG).show();
+
+                }else if(p6.length() == 0){
+
+                    Toast.makeText(getApplicationContext(), "Rellena el campo direccion", Toast.LENGTH_LONG).show();
+
                 }else if(p4.length() == 0 && p5.length() == 0){
 
 
                     String Total2 = TotalPedido2(c1.getText().toString(),tv2.getText().toString());
                     InsertarPedido(nombre.getText().toString(), direccion.getText().toString(), Total2);
-                    startActivity(new Intent(productos.this, MainCategorias1.class));
+                    //startActivity(new Intent(productos.this, MainCategorias1.class));
+                    Intent i = new Intent(productos.this, exito.class);
 
+                    i.putExtra("dato", nombre.getText().toString());
+                    i.putExtra("dato2", direccion.getText().toString());
+                    i.putExtra("dato3", colon.getText().toString());
+
+                    startActivity(i);
 
                 }else if(p3.length() == 0 && p5.length() == 0){
 
                     String Total3 = TotalPedido3(c2.getText().toString(),tv4.getText().toString());
                     InsertarPedido(nombre.getText().toString(), direccion.getText().toString(), Total3);
-                    startActivity(new Intent(productos.this, MainCategorias1.class));
+                    //startActivity(new Intent(productos.this, MainCategorias1.class));
+                    Intent i = new Intent(productos.this, exito.class);
+
+                    i.putExtra("dato", nombre.getText().toString());
+                    i.putExtra("dato2", direccion.getText().toString());
+                    i.putExtra("dato3", colon.getText().toString());
+
+                    startActivity(i);
 
                 }else if(p3.length() == 0 && p4.length() == 0){
 
                     String Total4 = TotalPedido4(c3.getText().toString(),tv4.getText().toString());
                     InsertarPedido(nombre.getText().toString(), direccion.getText().toString(), Total4);
-                    startActivity(new Intent(productos.this, MainCategorias1.class));
+                    //startActivity(new Intent(productos.this, MainCategorias1.class));
+                    Intent i = new Intent(productos.this, exito.class);
+
+                    i.putExtra("dato", nombre.getText().toString());
+                    i.putExtra("dato2", direccion.getText().toString());
+                    i.putExtra("dato3", colon.getText().toString());
+
+                    startActivity(i);
 
                 }else if(p5.length() == 0){
 
                     String Total5 = TotalPedido5(c1.getText().toString(),tv2.getText().toString(), c2.getText().toString(),tv4.getText().toString());
                     InsertarPedido(nombre.getText().toString(), direccion.getText().toString(), Total5);
-                    startActivity(new Intent(productos.this, MainCategorias1.class));
+                    //startActivity(new Intent(productos.this, MainCategorias1.class));
+                    Intent i = new Intent(productos.this, exito.class);
+
+                    i.putExtra("dato", nombre.getText().toString());
+                    i.putExtra("dato2", direccion.getText().toString());
+                    i.putExtra("dato3", colon.getText().toString());
+
+                    startActivity(i);
 
                 }else if(p4.length() == 0){
 
                     String Total6 = TotalPedido6(c1.getText().toString(),tv2.getText().toString(), c3.getText().toString(),tv6.getText().toString());
                     InsertarPedido(nombre.getText().toString(), direccion.getText().toString(), Total6);
-                    startActivity(new Intent(productos.this, MainCategorias1.class));
+                    //startActivity(new Intent(productos.this, MainCategorias1.class));
+                    Intent i = new Intent(productos.this, exito.class);
+
+                    i.putExtra("dato", nombre.getText().toString());
+                    i.putExtra("dato2", direccion.getText().toString());
+                    i.putExtra("dato3", colon.getText().toString());
+
+                    startActivity(i);
 
                 }else if(p3.length() == 0){
 
                     String Total7 = TotalPedido7(c2.getText().toString(),tv4.getText().toString(), c3.getText().toString(),tv6.getText().toString());
                     InsertarPedido(nombre.getText().toString(), direccion.getText().toString(), Total7);
-                    startActivity(new Intent(productos.this, MainCategorias1.class));
+                    //startActivity(new Intent(productos.this, MainCategorias1.class));
+                    Intent i = new Intent(productos.this, exito.class);
+
+                    i.putExtra("dato", nombre.getText().toString());
+                    i.putExtra("dato2", direccion.getText().toString());
+                    i.putExtra("dato3", colon.getText().toString());
+
+                    startActivity(i);
 
                 }else{
 
@@ -204,8 +288,15 @@ public class productos extends AppCompatActivity {
                     String Total = TotalPedido(c1.getText().toString(),c2.getText().toString(),c3.getText().toString(),tv2.getText().toString(),tv4.getText().toString(),tv6.getText().toString());
                     //String Total = TotalPedido(c1.getText().toString(),c2.getText().toString(),c3.getText().toString());
                     InsertarPedido(nombre.getText().toString(), direccion.getText().toString(), Total);
-                    startActivity(new Intent(productos.this, MainCategorias1.class)); //siguiente
+                    //startActivity(new Intent(productos.this, MainCategorias1.class)); //siguiente
                     //aqui termina - recordar
+                    Intent i = new Intent(productos.this, exito.class);
+
+                    i.putExtra("dato", nombre.getText().toString());
+                    i.putExtra("dato2", direccion.getText().toString());
+                    i.putExtra("dato3", colon.getText().toString());
+
+                    startActivity(i);
 
                 }
 
@@ -369,14 +460,14 @@ public class productos extends AppCompatActivity {
 
 
 
-        Double Cantidad1 = Double.valueOf(c1);
-        Double Cantidad2 = Double.valueOf(c2);
-        Double Cantidad3 = Double.valueOf(c3);
-        Double Precio1 = Double.valueOf(tv2);
-        Double Precio2 = Double.valueOf(tv4);
-        Double Precio3 = Double.valueOf(tv6);
+        Integer Cantidad1 = Integer.valueOf(c1);
+        Integer Cantidad2 = Integer.valueOf(c2);
+        Integer Cantidad3 = Integer.valueOf(c3);
+        Integer Precio1 = Integer.valueOf(tv2);
+        Integer Precio2 = Integer.valueOf(tv4);
+        Integer Precio3 = Integer.valueOf(tv6);
 
-        Double Total = (Cantidad1 * Precio1) + (Cantidad2 * Precio2) + (Cantidad3 * Precio3);
+        Integer Total = (Cantidad1 * Precio1) + (Cantidad2 * Precio2) + (Cantidad3 * Precio3);
         //Double Total = Cantidad1 + Cantidad2 + Cantidad3;
 
         return ""+Total;
@@ -389,11 +480,11 @@ public class productos extends AppCompatActivity {
 
 
 
-        Double Cantidad1 = Double.valueOf(c1);
+        Integer Cantidad1 = Integer.valueOf(c1);
 
-        Double Precio1 = Double.valueOf(tv2);
+        Integer Precio1 = Integer.valueOf(tv2);
 
-        Double Total2 = (Cantidad1 * Precio1) ;
+        Integer Total2 = (Cantidad1 * Precio1) ;
 
 
         return ""+Total2;
@@ -406,11 +497,11 @@ public class productos extends AppCompatActivity {
 
 
 
-        Double Cantidad1 = Double.valueOf(c2);
+        Integer Cantidad1 = Integer.valueOf(c2);
 
-        Double Precio1 = Double.valueOf(tv4);
+        Integer Precio1 = Integer.valueOf(tv4);
 
-        Double Total3 = (Cantidad1 * Precio1) ;
+        Integer Total3 = (Cantidad1 * Precio1) ;
 
 
         return ""+Total3;
@@ -423,11 +514,11 @@ public class productos extends AppCompatActivity {
 
 
 
-        Double Cantidad1 = Double.valueOf(c3);
+        Integer Cantidad1 = Integer.valueOf(c3);
 
-        Double Precio1 = Double.valueOf(tv6);
+        Integer Precio1 = Integer.valueOf(tv6);
 
-        Double Total4 = (Cantidad1 * Precio1) ;
+        Integer Total4 = (Cantidad1 * Precio1) ;
 
 
         return ""+Total4;
@@ -440,15 +531,15 @@ public class productos extends AppCompatActivity {
 
 
 
-        Double Cantidad1 = Double.valueOf(c1);
+        Integer Cantidad1 = Integer.valueOf(c1);
 
-        Double Precio1 = Double.valueOf(tv2);
+        Integer Precio1 = Integer.valueOf(tv2);
 
-        Double Cantidad2 = Double.valueOf(c2);
+        Integer Cantidad2 = Integer.valueOf(c2);
 
-        Double Precio2 = Double.valueOf(tv4);
+        Integer Precio2 = Integer.valueOf(tv4);
 
-        Double Total5 = (Cantidad1 * Precio1) + (Cantidad2 * Precio2) ;
+        Integer Total5 = (Cantidad1 * Precio1) + (Cantidad2 * Precio2) ;
 
 
         return ""+Total5;
@@ -461,15 +552,15 @@ public class productos extends AppCompatActivity {
 
 
 
-        Double Cantidad1 = Double.valueOf(c1);
+        Integer Cantidad1 = Integer.valueOf(c1);
 
-        Double Precio1 = Double.valueOf(tv2);
+        Integer Precio1 = Integer.valueOf(tv2);
 
-        Double Cantidad2 = Double.valueOf(c3);
+        Integer Cantidad2 = Integer.valueOf(c3);
 
-        Double Precio2 = Double.valueOf(tv6);
+        Integer Precio2 = Integer.valueOf(tv6);
 
-        Double Total6 = (Cantidad1 * Precio1) + (Cantidad2 * Precio2) ;
+        Integer Total6 = (Cantidad1 * Precio1) + (Cantidad2 * Precio2) ;
 
 
         return ""+Total6;
@@ -482,15 +573,15 @@ public class productos extends AppCompatActivity {
 
 
 
-        Double Cantidad1 = Double.valueOf(c2);
+        Integer Cantidad1 = Integer.valueOf(c2);
 
-        Double Precio1 = Double.valueOf(tv4);
+        Integer Precio1 = Integer.valueOf(tv4);
 
-        Double Cantidad2 = Double.valueOf(c3);
+        Integer Cantidad2 = Integer.valueOf(c3);
 
-        Double Precio2 = Double.valueOf(tv6);
+        Integer Precio2 = Integer.valueOf(tv6);
 
-        Double Total7 = (Cantidad1 * Precio1) + (Cantidad2 * Precio2) ;
+        Integer Total7 = (Cantidad1 * Precio1) + (Cantidad2 * Precio2) ;
 
 
         return ""+Total7;
