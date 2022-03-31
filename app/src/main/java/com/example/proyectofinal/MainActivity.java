@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText email, contraseña;
     private Button btn1;
+    private TextView salida;
     String editxt_email,editxt_password;
 
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.etemail);
         contraseña = findViewById(R.id.etcontraseña);
         btn1 = findViewById(R.id.b1);
+        salida = findViewById(R.id.salir);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, register.class));
             }
         });
+
+        salida.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, exit.class));
+            }
+        });
+
     }
 
     //string url del servidor web

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">proyectofinal</string>
+    <string name="cerrar"><u>Cerrar Sesion</u></string>
+    <string name="salir"><u>Cerrar Aplicación</u></string>
 </resources>

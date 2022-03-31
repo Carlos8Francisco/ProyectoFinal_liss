@@ -261,7 +261,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="2dp"
                 android:hint="Teclea tu número telefonico"
-                android:inputType="text"
+                android:phoneNumber="true"
                 android:textColorHint="#EF1414" />
 
         </LinearLayout>
@@ -277,7 +277,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TOTAL"
+                android:text="TOTAL: $"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
 
@@ -309,17 +309,40 @@
                 android:text="Cancelar" />
 
             <Button
-                android:id="@+id/pedido1"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="5dp"
-                android:text="Confirmar Pedido" />
+                android:onClick="total"
+                android:text="Total" />
+
+
+
+
 
 
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/pedido1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/liproduct"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Confirmar Pedido" />
+
+
+
+
+
+
 
 </RelativeLayout>

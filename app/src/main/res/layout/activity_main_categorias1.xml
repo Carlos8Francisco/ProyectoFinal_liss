@@ -4,12 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainCategorias1">
+    tools:context=".MainCategorias1"
+    android:background="#323131">
+
+    <TextView
+        android:id="@+id/cerrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cerrar"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="690sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#323131"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -43,8 +54,8 @@
 
         <ImageButton
             android:id="@+id/btn1"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:layout_marginVertical="30dp"
             android:background="#02FFFFFF"
             android:src="@drawable/pedido" />
@@ -63,8 +74,8 @@
 
         <ImageButton
             android:id="@+id/btn2"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:layout_marginVertical="30dp"
             android:background="#02FFFFFF"
             android:src="@drawable/list" />

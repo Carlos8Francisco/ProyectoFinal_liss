@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".exit"
+    android:background="#251EED">
+
+    <ImageView
+        android:id="@+id/lg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lg1"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="70dp"/>
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_below="@id/lg1"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-black"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#040404"
+        android:text="Curso de Titulación"
+        />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_below="@id/t1"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-black"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2FFF00"
+        android:text="AndroidStudio"
+        />
+
+    <TextView
+        android:id="@+id/t3"
+        android:layout_below="@id/t2"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-black"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Aplicaciones Mobiles"
+        />
+
+    <LinearLayout
+        android:id="@+id/li1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t3"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="40dp"
+        >
+
+        <TextView
+            android:id="@+id/t4"
+
+            android:textSize="17dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Autor: "
+
+            />
+
+        <TextView
+            android:id="@+id/t5"
+            android:textSize="15dp"
+            android:fontFamily="sans-serif"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Carlos Fernando Jesus Francisco Dzib"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ln2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/li1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="20dp"
+
+
+        >
+
+
+        <Button
+            android:id="@+id/crr1"
+            android:text="Terminar Aplicación"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:id="@+id/crr2"
+            android:text="Regresar a la Aplicación"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

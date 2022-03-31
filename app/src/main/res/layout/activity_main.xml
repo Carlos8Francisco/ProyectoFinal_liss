@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     android:background="@drawable/fondol"    >
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -105,9 +106,20 @@
 
         </LinearLayout>
 
-
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/salir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="20dp"
+        android:textColor="#7AFFFFFF"
+        android:textSize="20sp"
+        android:layout_marginTop="690sp"
+        android:layout_alignParentRight="true"
+        android:text="@string/salir"
+        android:layout_marginRight="25dp"/>
 
 
 </RelativeLayout>

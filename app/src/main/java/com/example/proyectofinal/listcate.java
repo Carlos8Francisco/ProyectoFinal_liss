@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class listcate extends AppCompatActivity {
 
     ListView listView;
     Adapter adapter;
+    Button b1;
 
     public static ArrayList<Categorias>categoriasArrayList=new ArrayList<>();
     String url = "https://pruebafd1.000webhostapp.com/loginphp/mostrar.php";
@@ -41,6 +43,7 @@ public class listcate extends AppCompatActivity {
         listView = findViewById(R.id.List1);
         adapter = new Adapter(this,categoriasArrayList);
         listView.setAdapter(adapter);
+        b1 = findViewById(R.id.cclr);
         ListarDatos();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -49,6 +52,15 @@ public class listcate extends AppCompatActivity {
 
                 startActivity(new Intent(getApplicationContext(),productos.class).putExtra("position",position));
                 Toast.makeText(listcate.this, "Realiza tu pedido", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(listcate.this, MainCategorias1.class));
+
             }
         });
 
